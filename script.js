@@ -3,7 +3,7 @@ copy = document.getElementById("copy")
 output = document.getElementById("output")
 input = document.getElementById("input")
 translateAgain = document.getElementById("translate-again")
-copy.addEventListener("click", copy)
+copy.addEventListener("click", copyOutput)
 translateAgain.addEventListener("click", translate)
 new ClipboardJS('.copy');
 
@@ -45,12 +45,12 @@ function process(result, current) {
 	}
 }
 
-function copy() {
-	copy.removeEventListener("click", copy)
-	copy.innerHTML = "Copied!";
+function copyOutput() {
+	copy.removeEventListener("click", copyOutput)
+	copy.innerHTML = "copied!";
 	setTimeout(() => {
-		copy.innerHTML = "Copy";
-		copy.addEventListener("click", copy)
+		copy.innerHTML = "copy";
+		copy.addEventListener("click", copyOutput)
 	},1000)
 }
 
