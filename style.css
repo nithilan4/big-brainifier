@@ -1,0 +1,125 @@
+textarea:focus {
+	outline: 0;
+}
+
+button:focus {
+	outline: 0;
+}
+
+
+#input {
+	grid-row-start: 1;
+	grid-row-end: 1;
+	margin: auto;
+	height: 25vh;
+	width: 70vw;
+	resize: none;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+  border-radius: 12px;
+  background-image: linear-gradient(black, #36393e), radial-gradient(circle at top left, #a777e3,#6e8efb);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+	border: 1px transparent;
+}
+
+body {
+	background: #36393e;
+  vertical-align: middle;
+}
+
+#output {
+	border: 1px transparent;
+	grid-row-start: 3;
+	grid-row-end: 3;
+	margin: auto;
+	height: 25vh;
+	width: 70vw;
+	resize: none;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+  border-radius: 12px;
+  background-image: linear-gradient(#36393e, black), radial-gradient(circle at top left, limegreen,#6e8efb);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#copy {
+	margin: auto;
+	opacity: 0.6;
+	transition: 0.2s all;
+	grid-row-start: 4;
+	grid-row-end: 4;
+	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	padding: 0.6em 1em;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	color: white;
+	border-radius: 12px;
+	border: transparent;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	background: linear-gradient(135deg, #a777e3, #6e8efb);
+}
+
+#copy:hover {
+	opacity: 1;
+}
+
+#translate-again {
+	margin: auto;
+	opacity: 0.6;
+	transition: 0.2s all;
+	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	padding: 0.6em 1em;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	color: white;
+	border-radius: 12px;
+	border: transparent;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	background: linear-gradient(135deg, #a777e3, #6e8efb);
+}
+
+#translate-again:hover {
+	opacity: 1;
+}
+
+#submit {
+	vertical-align: middle;
+	margin: auto;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	font-size: 4vh;
+	height: 10vh;
+	width: 70vw;
+	font-weight: bold;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	color: white;
+	border-radius: 12px;
+	border: 1px solid transparent;
+	transition: 0.2s all;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+#submit:hover {
+	border: 1px solid #670ec3;
+}
+
+#gridDiv {
+	display: grid;
+	grid-gap: 10px;
+	align-items: center;
+	grid-template-rows: 60px, 100px, 100px, 5px;
+}
