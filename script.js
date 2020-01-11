@@ -14,17 +14,19 @@ function generateOutput() {
 	copy.setAttribute("data-clipboard-text", "")
 	inputStr = input.value
 	inputStr.split(" ").forEach((element) => {
-		var xmlHTTP = new XMLHttpRequest();
-		var url = "https://api.datamuse.com/words?rel_syn=" + element
-		xmlHTTP.open("GET", url, false);
-		xmlHTTP.send();
-		console.log(xmlHTTP.responseText)
-		if (xmlHTTP.responseText == "[]") {
-			output.value += element + " ";
-			copy.setAttribute("data-clipboard-text", copy.getAttribute("data-clipboard-text") + element + " ")
-		} else {
-			process(JSON.parse(xmlHTTP.responseText), element)
-		}
+    if (!(stop.includes(element))) {
+      var xmlHTTP = new XMLHttpRequest();
+      var url = "https://api.datamuse.com/words?rel_syn=" + element
+      xmlHTTP.open("GET", url, false);
+      xmlHTTP.send();
+      console.log(xmlHTTP.responseText)
+      if (xmlHTTP.responseText == "[]") {
+        output.value += element + " ";
+        copy.setAttribute("data-clipboard-text", copy.getAttribute("data-clipboard-text") + element + " ")
+      } else {
+        process(JSON.parse(xmlHTTP.responseText), element)
+      }
+    }
 	})
 }
 
@@ -34,7 +36,7 @@ function process(result, current) {
 	for (key in result) {
 		newWord = result[key].word
 		console.log(newWord)
-		if (newWord.length > longest.length && newWord.length > current.length && !(newWord.includes("atomic number")) && !(nono.includes(newWord)) && !(stop.includes(newWord))) {
+		if (newWord.length > longest.length && newWord.length > current.length && !(newWord.includes("atomic number")) && !(nono.includes(newWord))) {
 			longest = newWord;
 		}
 	}
