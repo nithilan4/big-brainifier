@@ -9,6 +9,12 @@ copy.addEventListener("click", copyOutput)
 translateAgain.addEventListener("click", translate)
 new ClipboardJS('.copy');
 
+input.addEventListener("keydown", (e) => {
+	if (e.keyCode == 13) {
+		generateOutput();
+	}
+})
+
 function generateOutput() {
 	output.value = ""
 	copy.setAttribute("data-clipboard-text", "")
