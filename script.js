@@ -12,6 +12,7 @@ new ClipboardJS('.copy');
 input.addEventListener("keydown", (e) => {
 	if (e.keyCode == 13) {
 		generateOutput();
+		e.preventDefault();
 	}
 })
 
